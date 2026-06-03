@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
 
 /* Reset & Base */
 *, *::before, *::after {
@@ -16,7 +16,7 @@
   --accent: #7eb89a;
   --accent-light: #1a2b22;
   --radius: 8px;
-  --font: 'Sofia', cursive;
+  --font: 'Sofia Sans', sans-serif;
   --font-mono: 'Courier New', monospace;
 }
 
