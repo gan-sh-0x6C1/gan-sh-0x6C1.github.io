@@ -1,226 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;600&display=swap');
+/* Import Sofia font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
 
-/* ================================
-   Simple Stylesheet
-   ================================ */
-
-/* Reset & Base */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --bg-from: #1a1a2e;
-  --bg-to: #0f2027;
-  --surface: #1c1c1a;
-  --border: #2e2e2b;
-  --text: #e8e6e0;
-  --muted: #6b6b65;
-  --accent: #7eb89a;
-  --accent-light: #1a2b22;
-  --radius: 8px;
-  --font: 'Sofia Sans', sans-serif;
-  --font-mono: 'Courier New', monospace;
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: linear-gradient(135deg, var(--bg-from), var(--bg-to));
-  background-attachment: fixed;
-  color: var(--text);
-  font-family: 'Sofia Sans', sans-serif;
-  line-height: 1.7;
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-  text-align: center;
-  min-height: 100vh;
+    /* Apply Sofia as the primary font */
+    font-family: 'Sofia', cursive, sans-serif;
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Live gradient background settings */
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #3b0764);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    
+    overflow-x: hidden;
 }
 
-/* Typography */
-h1, h2, h3, h4 {
-  line-height: 1.25;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  font-family: 'Sofia Sans', sans-serif;
+/* Keyframes for the live animated gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.4rem; margin-top: 2.5rem; }
-h3 { font-size: 1.1rem; margin-top: 2rem; }
-
-p { margin-bottom: 1.25rem; }
-
-a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-a:hover { opacity: 0.75; }
-
-small, .muted {
-  color: var(--muted);
-  font-size: 0.875rem;
-}
-
-/* Divider */
-hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 2rem 0;
-}
-
-/* Blockquote */
-blockquote {
-  border-left: 3px solid var(--accent);
-  padding-left: 1.25rem;
-  color: var(--muted);
-  font-style: italic;
-  margin: 1.5rem 0;
-  text-align: left;
-}
-
-/* Code */
-code {
-  font-family: var(--font-mono);
-  font-size: 0.875em;
-  background: var(--accent-light);
-  padding: 0.15em 0.4em;
-  border-radius: 4px;
-}
-
-pre {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  overflow-x: auto;
-  margin-bottom: 1.25rem;
-  text-align: left;
-}
-
-pre code {
-  background: none;
-  padding: 0;
-}
-
-/* Lists */
-ul, ol {
-  padding-left: 1.5rem;
-  margin-bottom: 1.25rem;
-  text-align: left;
-  display: inline-block;
-}
-
-li { margin-bottom: 0.35rem; }
-
-/* Card */
+/* Example UI Card Component to complement the dark theme */
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin-bottom: 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* Buttons */
-button, .btn {
-  display: inline-block;
-  padding: 0.55rem 1.25rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  font-family: 'Sofia Sans', sans-serif;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #f472b6; /* Subtle pink accent to contrast the dark base */
+    text-shadow: 0 0 10px rgba(244, 114, 182, 0.3);
 }
 
-button:hover, .btn:hover {
-  background: var(--bg-from);
-  border-color: var(--accent);
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
 }
 
-.btn-primary {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
+/* Accessible preference handling: stops animation if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+        background-size: 100% 100%;
+    }
 }
-
-.btn-primary:hover {
-  opacity: 0.88;
-  background: var(--accent);
-}
-
-/* Form elements */
-input, textarea, select {
-  width: 100%;
-  padding: 0.55rem 0.85rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  color: var(--text);
-  font-family: 'Sofia Sans', sans-serif;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  transition: border-color 0.15s;
-}
-
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-
-label {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 0.3rem;
-}
-
-/* Table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.25rem;
-  font-size: 0.95rem;
-  text-align: left;
-}
-
-th, td {
-  text-align: left;
-  padding: 0.65rem 0.85rem;
-  border-bottom: 1px solid var(--border);
-}
-
-th {
-  color: var(--muted);
-  font-weight: normal;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Image */
-img {
-  max-width: 100%;
-  border-radius: var(--radius);
-  display: block;
-  margin: 0 auto;
-}
-
-/* Utility */
-.text-center { text-align: center; }
-.text-right  { text-align: right; }
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-4 { margin-top: 2rem; }
-.mb-0 { margin-bottom: 0; }
