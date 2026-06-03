@@ -1,6 +1,4 @@
-/* ================================
-   Simple Stylesheet
-   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
 
 /* Reset & Base */
 *, *::before, *::after {
@@ -10,15 +8,15 @@
 }
 
 :root {
-  --bg: #fafaf8;
-  --surface: #ffffff;
-  --border: #e8e6e1;
-  --text: #1a1a18;
-  --muted: #888880;
-  --accent: #3d6b4f;
-  --accent-light: #edf4f0;
+  --bg: #111110;
+  --surface: #1c1c1a;
+  --border: #2e2e2b;
+  --text: #e8e6e0;
+  --muted: #6b6b65;
+  --accent: #7eb89a;
+  --accent-light: #1a2b22;
   --radius: 8px;
-  --font: 'Georgia', serif;
+  --font: 'Sofia', cursive;
   --font-mono: 'Courier New', monospace;
 }
 
